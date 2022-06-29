@@ -1,0 +1,11 @@
+<div class="movie" *ngIf="movie">
+  <img src="{{movie.hasOwnProperty('poster_path') ? http.IMG_PATH + movie['poster_path'] : ''}}" alt="{{movie.hasOwnProperty('title') ? movie['title'] : ''}}">
+  <div class="movie-info">
+    <h3>{{movie.hasOwnProperty('title') ? movie['title'] : ''}}</h3>
+    <span class="{{getMovieRatingColor(movie)}}">{{movie.hasOwnProperty('vote_average') ? movie['vote_average'] : ''}}</span>
+  </div>
+  <div class="overview">
+    <h3>Overview</h3>
+    {{movie.hasOwnProperty('overview') ? movie['overview'] : ''}}
+  </div>
+</div>
